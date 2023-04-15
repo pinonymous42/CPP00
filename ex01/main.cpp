@@ -7,7 +7,7 @@ int	main(void)
 	int			i = 0;
 	while (1)
 	{
-		std::cout << "write a command <ADD / SEARCH / EXIT>: ";
+		std::cout << "write a command <ADD / SEARCH / EXIT>: " << std::flush;
 		if (!std::getline(std::cin, command))
 			return (1);
 		if (command == "ADD")

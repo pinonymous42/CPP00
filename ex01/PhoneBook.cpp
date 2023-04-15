@@ -55,13 +55,13 @@ void	PhoneBook::search_for_contact(int& i)
 		tmp_first_name << "|" << std::setw(10) << tmp_last_name << "|" << std::setw(10) <<
 		tmp_nickname << "|" << std::endl;
 	}
-	std::cout << "Enter an index: ";
+	std::cout << "Enter an index: " << std::flush;
 	if (!std::getline(std::cin, search_index))
-		std::exit(1);
+		std::exit(1) ;
 	if ('0' <= search_index[0] && search_index[0] <= '7' && search_index.length() == 1)
 	{
 		tmp_index = search_index[0] - '0';
-		if (tmp_index >= 0 && tmp_index <= 7 && tmp_index <= i)
+		if (tmp_index >= 0 && tmp_index <= 7 && tmp_index < i)
 		{
 			std::cout << "first name: " << contact[tmp_index].get_first_name() << std::endl;
 			std::cout << "last name: " << contact[tmp_index].get_last_name() << std::endl;
@@ -70,8 +70,8 @@ void	PhoneBook::search_for_contact(int& i)
 			std::cout << "darkest secret: " << contact[tmp_index].get_darkest_secret() << std::endl;
 		}
 		else
-			std::cout << "input a right index" << std::endl;
+			std::cout << "Invalid index" << std::endl;
 	}
 	else
-		std::cout << "input a right index" << std::endl;
+		std::cout << "Invalid index" << std::endl;
 }
